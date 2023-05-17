@@ -1,0 +1,29 @@
+<div class="col-12">
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <button mat-icon-button (click)="sidenav.toggle();">
+        <mat-icon >menu</mat-icon>
+      </button>
+      <h1 class="height">Angular Material Sidenav</h1>
+    </mat-toolbar-row>
+  </mat-toolbar>
+<mat-sidenav-container >
+  <mat-sidenav #sidenav mode="side">
+    <mat-nav-list class="button-size" class="sidenav">
+      &nbsp;&nbsp;&nbsp;<a routerLink="/form">Form</a>
+      <br/>
+      <br/>
+      &nbsp;&nbsp;&nbsp;<a routerLink="/data">Data</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div style="height: 88vh;">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+<br/>
+<br/>
+<br/>
+</div>
+

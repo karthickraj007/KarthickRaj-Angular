@@ -1,0 +1,76 @@
+<div class="card">
+    <div class="card-header">
+      <h1>Data-Component</h1>
+    </div>
+    <div class="card-body">
+      <div>
+        <input type="text" name="search" [(ngModel)]="search" placeholder="Search here">
+      </div>
+      <br/>
+     <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th (click)="sort('Id')">Id&nbsp;<i class="fa fa-sort"></i></th>
+            <th (click)="sort('FirstName')">first Name &nbsp;<i class="fa fa-sort"></i></th>
+            <th (click)="sort('LastName')">last Name &nbsp;<i class="fa fa-sort"></i></th>
+            <th (click)="sort('Age')">age&nbsp;<i class="fa fa-sort"></i></th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr  *ngFor="let k of data | filter:search | orderBy : key : reverse |paginate:{itemsPerPage:3,currentPage:p};">
+              <td class="">
+                <div *ngIf="k.isEdit">
+                    <input type="text" [(ngModel)]="k.Id" class="temp"/>
+                </div>
+                <div  *ngIf="!k.isEdit">
+                  {{k.Id}}
+                </div>
+              </td>
+              <td>
+                <div *ngIf="k.isEdit">
+                  <input type="text" [(ngModel)]="k.FirstName" class="temp"/>
+                </div>
+                <div  *ngIf="!k.isEdit">
+                  {{k.FirstName}}
+                </div>
+              </td>
+              <td>
+                <div *ngIf="k.isEdit">
+                  <input type="text" [(ngModel)]="k.LastName" class="temp"/>
+                </div>
+                <div  *ngIf="!k.isEdit">
+                  {{k.LastName}}
+                </div>
+              </td>
+              <td>
+                <div *ngIf="k.isEdit">
+                  <input type="text" [(ngModel)]="k.Age" class="temp"/>
+                </div>
+                <div  *ngIf="!k.isEdit">
+                  {{k.Age}}
+                </div>
+              </td>
+              <td >
+                <div *ngIf="!k.isEdit">
+                  <i class="fa fa-pencil-square-o icon" aria-hidden="true" (click)="edit(k)"></i>&nbsp;&nbsp;
+                  <i class="fa fa-trash-o icon1" aria-hidden="true" (click)="delete(k)"></i>
+                </div>
+                <div *ngIf="k.isEdit">
+                  <i class="fa fa-check icon" aria-hidden="true" (click)="update(k)"></i>&nbsp;&nbsp;
+                  <i class="fa fa-times icon2" aria-hidden="true" (click)="cancel(k)"></i>
+                </div>
+              </td>
+            </tr>
+        </tbody>
+    </table>
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+      <button class="btn btn-primary" (click)="getdata()">GetData</button>
+      <br/>
+      <br/>
+      <div *ngIf="arr1 == true">
+        <button class="btn btn-danger" (click)="form()">BackForm</button>
+      </div>
+    </div>
+   
+  </div>
