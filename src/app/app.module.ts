@@ -4,6 +4,10 @@ import{ MatToolbarModule } from '@angular/material/toolbar';
 import{ MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule} from '@angular/material/list';
+import { MatCardModule} from '@angular/material/card';
+import { FlexLayoutModule} from '@angular/flex-layout';
+import { MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 import { MatButtonModule} from '@angular/material/button'
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -16,11 +20,15 @@ import { Ng2OrderModule } from 'ng2-order-pipe';
 import { NgxPaginationModule } from 'ngx-pagination';
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
     FormComponent,
-    DataComponent
+    DataComponent,
+   
+    
   ],
   imports: [
     BrowserModule,
@@ -35,7 +43,11 @@ import { NgxPaginationModule } from 'ngx-pagination';
     Ng2SearchPipeModule,
     FormsModule,
     Ng2OrderModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    MatCardModule,
+    MatFormFieldModule,
+    FlexLayoutModule,
+    MatInputModule
    
   
   ],

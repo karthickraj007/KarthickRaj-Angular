@@ -29,7 +29,7 @@ userprofile = new FormGroup({
 public getdata(){
  
   this.svc.arr.push(this.userprofile.value)
-  alert("user data sucessfully added")
+  alert("Log in Successful")
   console.log(this.svc.arr)
    this.route.navigate(['/data'])
   

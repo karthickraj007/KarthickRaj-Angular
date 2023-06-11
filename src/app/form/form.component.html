@@ -1,35 +1,28 @@
-<div class="card">
-    <div class="card-header">
-      <h1>Form-Component</h1>
-    </div>
-    <div class="card-body">
-        <form [formGroup]="userprofile">
-            <label>
-                Id:
-                  <input type="text" formControlName="Id"/>
-            </label>
-            <br/>
-            <br/>
-            <label>
-              First Name:
-                <input type="text" formControlName="FirstName" />
-            </label>
-            <br/>
-            <br/> 
-            <label>
-              Last Name:
-                <input type="text" formControlName="LastName"/>
-            </label>
-            <br/>
-            <br/> 
-            <label>
-              Age:
-                <input type="text" formControlName="Age"/>
-          </label>
+ <div fxLayoutAlign="center center" fxFlexFill>
+  <mat-card  fxFlex="25%" fxFlex.lt-sm="80%" fxFlex.lt-xl="25%" class="border">
+    <mat-toolbar color="primary" class="text-center">
+      Log In Page
+    </mat-toolbar>
+    <br/>
+      <form [formGroup]="userprofile" fxLayoutAlign="stretech" fxLayout="column" class="login-form">
+        <mat-form-field  appearance="fill" >
+          <input matInput  placeholder="Id" formControlName="Id"/>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <input matInput placeholder="FirstName" formControlName="FirstName" />
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <input matInput placeholder="LastName" formControlName="LastName"/>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <input matInput placeholder="Age" formControlName="Age"/>
+        </mat-form-field>
+          <button mat-raised-button (click)="getdata()">Login</button>
           <br/>
-          <br/>
-        </form>
-        <button class="btn btn-primary" (click)="getdata()">Click</button>
-    </div>
-  </div>
+      </form>
+  </mat-card>
+</div>
+ 
+
+
 

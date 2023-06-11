@@ -1,0 +1,13 @@
+.login-form{
+    padding:10px
+}
+
+.border{
+    border-radius: 20px;
+}
+
+.text-center{
+    align-items: center;
+    justify-content: center;
+}
+
